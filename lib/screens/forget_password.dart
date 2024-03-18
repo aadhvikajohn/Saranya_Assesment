@@ -37,10 +37,18 @@ class _ForgetPasswordState extends State<ForgetPassword> {
           .sendPasswordResetEmail(email: emailcontroller.text.toString())
           .then((value) {
         showSnakBar("We have Send to email ! Please Check Your email");
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => LoginPage()));
+
+            
+        Future.delayed(const Duration(seconds:10), () {
+
+// Here you can write your code
+
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => LoginPage()));
+
+        });
         emailcontroller.clear();
         setState(() {
           loading = false;
